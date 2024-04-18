@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      nav {
+        position: fixed;
+        top: 10px;
+        right: 0;
+      }
+      section {
+        height: 100vh;
+      }
+      section:nth-child(2n) {
+        background-color: pink;
+      }
+      section:nth-child(2n + 1) {
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#menu 01">menu 01</a>
+      <a href="#menu 02">menu 02</a>
+      <a href="#menu 03">menu 03</a>
+      <a href="#menu 04">menu 04</a>
+    </nav>
+
+    <section id="menu 01">section 01</section>
+    <section id="menu 02">section 02</section>
+    <section id="menu 03">section 03</section>
+    <section id="menu 04">section 04</section>
+    <script src="./index/js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(window).on("scroll", function () {
+        $("nav a").css("color", "white");
+        $("section").each(function (index) {
+          //   console.log($(this).offset().top);
+          if (scrollY > $(this).offset().top) {
+            console.log(scrollY, $(this).offset().top);
+            console.log("index" + index);
+            console.log($("nav a").eq(index));
+            $("nav a").eq(index).css("color", "red");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

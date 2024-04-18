@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
+    />
+    <style>
+      .slider img {
+        width: 100%;
+        height: 90%;
+      }
+      /* 내가 원하는 모양으로 바꾸어 사용하기 */
+      .bx-wrapper .bx-prev {
+        background: linear-gradient(45deg, red 50%, transparent 0%);
+        /* background-color: green; */
+        transform: translateX(50px) rotate(45deg);
+      }
+      .bx-wrapper .bx-next {
+        background: linear-gradient(45deg, transparent 50%, red 0%);
+        /* background-color: green; */
+        transform: translateX(-50px) rotate(45deg);
+      }
+      .bx-wrapper .bx-next:hover {
+        background: linear-gradient(45deg, transparent 50%, red 0%);
+        /* background-color: green; */
+        transform: translateX(-50px) rotate(45deg);
+      }
+      .bx-wrapper .bx-next:hover,
+      .bx-wrapper .bx-next:focus {
+        background-position: 0 0;
+      }
+      .bx-wrapper .bx-pager.bx-default-pager a:hover,
+      .bx-wrapper .bx-pager.bx-default-pager a.active,
+      .bx-wrapper .bx-pager.bx-default-pager a:focus {
+        background-color: red;
+      }
+      .bx-wrapper .bx-pager.bx-default-pager a {
+        background-color: yellow;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div><img src="./index/img/slide-1.jpg" alt="" /></div>
+      <div><img src="./index/img/slide-2.jpg" alt="" /></div>
+      <div><img src="./index/img/slide-3.jpg" alt="" /></div>
+      <div><img src="./index/img/slide-4.jpg" alt="" /></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+      $(".slider").bxSlider();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="mainMenu">
+      <li>
+        MainMenu01
+        <ul class="subMenu">
+          <li>SubMenu1 1</li>
+          <li>SubMenu1 2</li>
+          <li>SubMenu1 3</li>
+        </ul>
+      </li>
+      <li>
+        MainMenu02
+        <ul class="subMenu">
+          <li>SubMenu2 1</li>
+          <li>SubMenu2 2</li>
+          <li>SubMenu2 3</li>
+        </ul>
+      </li>
+      <li>
+        MainMenu03
+        <ul class="subMenu">
+          <li>SubMenu3 1</li>
+          <li>SubMenu3 2</li>
+          <li>SubMenu3 3</li>
+        </ul>
+      </li>
+    </ul>
+    <script src="./index/js/jquery-3.7.1.min.js"></script>
+    <script>
+      // effect method
+      // 모두 애니메이션 큐를 사용함 => 애니메이션이 쌓임(stop()으로 쌓인 애니메이션을 지워줘야한다)
+      $(".subMenu").slideUp();
+      $(".mainMenu li").on("mouseover", function () {
+        $(".subMenu").stop().slideUp();
+        $(this).find(".subMenu").stop().slideDown();
+        // .mainmenu > li > .subMenu
+        // .mainMenu > li . subMenu
+      });
+    </script>
+  </body>
+</html>
